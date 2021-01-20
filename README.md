@@ -1,2 +1,2 @@
 # movie
-movie rental 
+movie rental store 
