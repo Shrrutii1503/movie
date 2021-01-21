@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>movie</title>
+</head>
+
+<body>
+    <ul>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <title>movie</title>
+        </head>
+
+        <body>
+            
+            <table class="table table-hover table-bordered">
+                <thead class="bg-primary font-weight-bold text-white">
+                    <tr>
+                        <th>MovieId</th>
+                        <th>Title</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if  error%}
+                    <h1>{{error}}</h1>
+                    {% else %}
+                    <h1>Rented {{movie.movie_name}}</h1>
+                    {% endif %}
+
+                    {% for register in cart  %}
+
+                    <tr>
+                        <td>{{register.movie_id}}</td>
+                        <td>{{register.movie_name}}</td>
+                        <td>{{ register.in_stock}}</td>
+
+                        {% endfor %}
+                </tbody>
+            </table>
+            <a href="/movies/dashboard/">Back Home</a>
+        </body>
+
+    </ul>
+</body>

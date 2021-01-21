@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dashboard</title>
+    <style>
+        table{
+            border-spacing: 1px;
+        }
+        th {
+            background-color: #eaeaea;
+            padding: 0.3rem 0.8rem;
+        }
+        td{
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table table-hover table-bordered">
+        <thead class="bg-primary font-weight-bold text-white">
+            <tr>
+                <th>CustomerId</th>
+                <th>CustomerName</th>
+                <th>Customerage</th>
+                <th>PostalCode</th>
+                <th>Rented CD's</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart  %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td><span>{{item.name}}</span><button><a
+                            href='/movies/dashboard/delete-item/{{item.id}}'>Delete</button></a></td>
+                <td>{{ item.age}}</td>
+                <td>{{item.pincode}}</td>
+                <td>{{item.rented_cd}}</td>
+                <td><span><button><a href='rent/rent-movie/{{item.id}}'>Rent</button></span></a></span></td>
+                {% endfor %}
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>
